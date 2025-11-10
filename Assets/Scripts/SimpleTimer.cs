@@ -5,7 +5,7 @@ using UnityEngine.UI;
 
 public class SimpleTimer : MonoBehaviour
 {
-    public int timeLimit = 60;  // this is where you can change the timer
+    public int timeLimit = 20;  // this is where you can change the timer
     private float timeGamePlayingStarted;
     private GameController gameController;
 
