@@ -9,19 +9,25 @@ public class GameView : MonoBehaviour
     public Text resultText;
     public Text timerText;
     
+    // added by me for UI prefrence
+    private int maxCollectiblesCount;
+    
     // Start is called before the first frame update
     private void Start()
     {
+        // also added by me
+        maxCollectiblesCount = GameObject.FindGameObjectsWithTag("Pick Up").Length;
+        
         // Set the text property of our Result Text UI to an empty string, making the game over message blank
         resultText.text = "";
-        countText.text = "Count: 0";
+        countText.text = "Count: 0/" + maxCollectiblesCount;
     }
 
     // Create a standalone function that can update the 'countText' UI and check if the required amount to win has been achieved
     public void SetCountText(int count)
     {
         // Update the text field of our 'countText' variable
-        countText.text = "Count: " + count;
+        countText.text = "Count: " + count + "/" + maxCollectiblesCount;
     }
 
     public void SetTimerText(int count)
